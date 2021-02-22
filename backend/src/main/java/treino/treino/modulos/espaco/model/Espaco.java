@@ -18,8 +18,11 @@ public class Espaco implements Serializable {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private long id;
 
-    @Column(name = "lotacao")
-    private int lotacao;
+    @Column(name = "nome")
+    private String nome;
+
+    @Column(name = "lotação")
+    private String lotação;
 
     @ManyToMany
     @JoinTable(name="pessoa_espaco", joinColumns=
@@ -30,9 +33,8 @@ public class Espaco implements Serializable {
     public Espaco() {
     }
 
-    public Espaco(long id, int lotacao, List<Pessoa> pessoas) {
-        this.id = id;
-        this.lotacao = lotacao;
+    public Espaco(String nome, List<Pessoa> pessoas) {
+        this.nome = nome;
         this.pessoas = pessoas;
     }
 
@@ -48,12 +50,20 @@ public class Espaco implements Serializable {
         this.id = id;
     }
 
-    public int getLotacao() {
-        return lotacao;
+    public String getNome() {
+        return nome;
     }
 
-    public void setLotacao(int lotacao) {
-        this.lotacao = lotacao;
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getLotação() {
+        return lotação;
+    }
+
+    public void setLotação(String lotação) {
+        this.lotação = lotação;
     }
 
     public List<Pessoa> getPessoas() {
