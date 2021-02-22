@@ -28,7 +28,7 @@ public class EspacoController {
     }
     @GetMapping(value = "/espaco/{idEspaco}", produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<?> getEspaco(
-            @PathVariable(value = "idPessoa", required = false) int idPessoa) {
-        return new ResponseEntity<>(espacoService.resgataEspaco(idPessoa), HttpStatus.OK);
+            @PathVariable(value = "idEspaco", required = false) int idEspaco) {
+        return new ResponseEntity<>(espacoService.resgataEspaco(idEspaco), HttpStatus.OK);
     }
 }
