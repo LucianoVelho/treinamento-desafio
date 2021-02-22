@@ -15,16 +15,12 @@ import treino.treino.modulos.pessoa.service.PessoaService;
 public class PessoaController {
 
     @Autowired
-    ObjectMapper objectMapper;
-
-    @Autowired
     PessoaService pessoaService;
 
     @PostMapping(value = "/pessoa", produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<?> criaPessoa (
             @RequestParam(value = "pessoa", required = false) String pessoaString) throws Exception {
-        Pessoa pessoaJson = objectMapper.readValue( pessoaString, Pessoa.class);
-        return new ResponseEntity<>(pessoaService.cadastraPessoa(pessoaJson), HttpStatus.OK);
+        return new ResponseEntity<>(pessoaService.cadastraPessoa(pessoaString), HttpStatus.OK);
     }
 
     @GetMapping (value = "/pessoas", produces = {MediaType.APPLICATION_JSON_VALUE})
@@ -32,7 +28,7 @@ public class PessoaController {
         return new ResponseEntity<>(pessoaService.resgataPessoas(), HttpStatus.OK);
     }
     @GetMapping(value = "/pessoa/{idPessoa}", produces = {MediaType.APPLICATION_JSON_VALUE})
-    public ResponseEntity<?> getCorrida(
+    public ResponseEntity<?> getPessoa(
             @PathVariable(value = "idPessoa", required = false) int idPessoa) {
         return new ResponseEntity<>(pessoaService.resgataPessoa(idPessoa), HttpStatus.OK);
     }

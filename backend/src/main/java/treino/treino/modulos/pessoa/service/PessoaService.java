@@ -1,5 +1,6 @@
 package treino.treino.modulos.pessoa.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,7 +18,8 @@ public class PessoaService {
     @Autowired
     ObjectMapper objectMapper;
 
-    public Pessoa cadastraPessoa(Pessoa pessoa){
+    public Pessoa cadastraPessoa(String pessoaString) throws JsonProcessingException {
+        Pessoa pessoa = objectMapper.readValue( pessoaString, Pessoa.class);
         return pessoaRepository.save(pessoa);
     }
 
