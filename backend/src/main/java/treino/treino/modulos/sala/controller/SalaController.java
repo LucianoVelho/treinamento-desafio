@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import treino.treino.modulos.espaco.model.Espaco;
 import treino.treino.modulos.espaco.service.EspacoService;
 import treino.treino.modulos.pessoa.service.PessoaService;
+import treino.treino.modulos.sala.model.Sala;
 import treino.treino.modulos.sala.service.SalaService;
 
 @RestController
@@ -18,16 +19,18 @@ public class SalaController {
     @Autowired
     SalaService salaService;
 
+    @CrossOrigin
     @PostMapping(value = "/sala", produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<?> criaSala (
-            @RequestParam(value = "sala", required = false) String salaString) throws Exception {
-        return new ResponseEntity<>(salaService.cadastraSala(salaString), HttpStatus.OK);
+            @RequestBody Sala sala) throws Exception {
+        return new ResponseEntity<>(salaService.cadastraSala(sala), HttpStatus.OK);
     }
-
+    @CrossOrigin
     @GetMapping(value = "/salas", produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<?> buscaSala () throws Exception {
         return new ResponseEntity<>(salaService.resgataSalas(), HttpStatus.OK);
     }
+    @CrossOrigin
     @GetMapping(value = "/sala/{idSala}", produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<?> getSala(
             @PathVariable(value = "idSala", required = false) int idSala) {

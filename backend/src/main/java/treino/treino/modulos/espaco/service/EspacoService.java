@@ -20,8 +20,7 @@ public class EspacoService {
     @Autowired
     ObjectMapper objectMapper;
 
-    public Espaco cadastraEspaco(String espacoString) throws JsonProcessingException {
-        Espaco espaco = objectMapper.readValue( espacoString, Espaco.class);
+    public Espaco cadastraEspaco(Espaco espaco) throws JsonProcessingException {
         return espacoRepository.save(espaco);
     }
 
