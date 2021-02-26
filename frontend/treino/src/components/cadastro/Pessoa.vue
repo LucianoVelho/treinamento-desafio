@@ -1,7 +1,7 @@
 <template>
        <div class="container">
        <h1>Pessoa {{pessoa.nome}} {{pessoa.sobrenome}}</h1>
-    <form @submit.prevent="grava()">
+    <form @submit="grava()">
   <div class="form-group">
     <label for="nome">Nome</label>
     <input v-model="pessoa.nome" id="nome" autocomplete="off" class="form-control" >
@@ -25,7 +25,9 @@
   <tbody>
     <tr v-for="pesso in pessoas" >
       <th scope="row">{{pesso.id}}</th>
+      <router-link :to="{ name: 'pessoa', params: { id : pesso.id }}">
       <td>{{pesso.nome}}</td>
+      </router-link>
       <td>{{pesso.sobrenome}}</td>
     </tr>
   </tbody>

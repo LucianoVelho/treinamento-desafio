@@ -25,7 +25,9 @@
   <tbody>
     <tr v-for="espa in espacos" >
       <th scope="row">{{espa.id}}</th>
+     <router-link :to="{ name: 'espaco', params: { id : espa.id }}">
       <td>{{espa.nome}}</td>
+      </router-link>
       <td>{{espa.lotacao}}</td>
     </tr>
   </tbody>

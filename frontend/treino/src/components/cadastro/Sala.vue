@@ -25,7 +25,9 @@
   <tbody>
     <tr v-for="sal in salas" >
       <th scope="row">{{sal.id}}</th>
+       <router-link :to="{ name: 'sala', params: { id : sal.id }}">
       <td>{{sal.nome}}</td>
+      </router-link>
       <td>{{sal.lotacao}}</td>
     </tr>
   </tbody>
