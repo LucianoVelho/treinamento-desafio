@@ -1,5 +1,7 @@
 <template>
-<div class="table-responsive">
+<div class="container">
+<div class="row">
+<div class="col-md-6">
 <h1>Sala</h1>
 <table class="table table-striped">
   <thead>
@@ -17,7 +19,9 @@
     </tr>
   </tbody>
 </table>
+</div>
 <p></p>
+<div class="col-md-6">
 <h1>Participantes da Sala</h1>
 <p></p>
 <table class="table table-striped" v-for="sal in salas" v-if="sal.id == id">
@@ -36,6 +40,8 @@
     </tr>
   </tbody>
 </table>
+</div>
+</div>
 </div>
 </template>
 

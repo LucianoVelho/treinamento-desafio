@@ -10,29 +10,9 @@
     <label for="sobrenome">Sobrenome</label>
     <input v-model="pessoa.sobrenome" id="sobrenome" autocomplete="off" class="form-control" >
   </div>
-  <button type="submit" href="/pessoa" class="btn btn-primary">Submit</button>
+  <button v-on:click="say('cadastrado com sucesso');"  type="submit" href="/pessoa" class="btn btn-primary">Submit</button>
 </form>
 <p></p>
-<div class="table-responsive">
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Pessoas</th>
-      <th scope="col">Nome</th>
-      <th scope="col">Sobrenome</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr v-for="pesso in pessoas" >
-      <th scope="row">{{pesso.id}}</th>
-      <router-link :to="{ name: 'pessoa', params: { id : pesso.id }}">
-      <td>{{pesso.nome}}</td>
-      </router-link>
-      <td>{{pesso.sobrenome}}</td>
-    </tr>
-  </tbody>
-</table>
-</div>
     </div>
 
 </template>
@@ -55,6 +35,9 @@ methods: {
       this.$http
         .post('http://localhost:3000/api/pessoa', this.pessoa)
         .then(() => this.pessoa = new Pessoa(), err => console.log(err));
+    },
+    say: function (message) {
+      alert(message)
     }
   },
   created() {
