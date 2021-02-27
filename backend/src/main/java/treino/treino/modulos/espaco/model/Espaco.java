@@ -33,8 +33,9 @@ public class Espaco implements Serializable {
     public Espaco() {
     }
 
-    public Espaco(String nome, List<Pessoa> pessoas) {
+    public Espaco(String nome, int lotacao, List<Pessoa> pessoas) {
         this.nome = nome;
+        this.lotacao = lotacao;
         this.pessoas = pessoas;
     }
 

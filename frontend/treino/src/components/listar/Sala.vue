@@ -24,7 +24,7 @@
 <div class="col-md-6">
 <h1>Participantes da Sala</h1>
 <p></p>
-<table class="table table-striped" v-for="sal in salas" v-if="sal.id == id">
+<table class="table table-striped" >
   <thead>
     <tr>
       <th scope="col">Pessoa</th>
@@ -32,7 +32,7 @@
       <th scope="col">Sobrenome</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody v-for="sal in salas" v-if="sal.id == id">
     <tr v-for="pessoa in sal.pessoas">
       <th scope="row">{{pessoa.id}}</th>
       <td>{{pessoa.nome}}</td>

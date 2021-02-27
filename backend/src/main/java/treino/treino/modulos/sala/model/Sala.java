@@ -20,7 +20,7 @@ public class Sala implements Serializable {
     private String nome;
 
     @Column(name = "lotacao")
-    private String lotacao;
+    private int lotacao;
 
     @ManyToMany
     @JoinTable(name="pessoa_sala", joinColumns=
@@ -31,7 +31,7 @@ public class Sala implements Serializable {
     public Sala() {
     }
 
-    public Sala(long id, String nome, String lotacao, List<Pessoa> pessoas) {
+    public Sala(long id, String nome, int lotacao, List<Pessoa> pessoas) {
         this.id = id;
         this.nome = nome;
         this.lotacao = lotacao;
@@ -54,11 +54,11 @@ public class Sala implements Serializable {
         this.nome = nome;
     }
 
-    public String getLotacao() {
+    public int getLotacao() {
         return lotacao;
     }
 
-    public void setLotacao(String lotacao) {
+    public void setLotacao(int lotacao) {
         this.lotacao = lotacao;
     }
 

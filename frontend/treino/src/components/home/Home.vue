@@ -2,8 +2,10 @@
      <div class="container">
       <h1 class="text-center">Treinamento TI Bluemenau</h1>
       <p></p>
+      <form @submit.prevent="grava()">
       <button v-on:click="counter += 1; say('Inicializando a etapa! Deseguinando as pessoas a suas Salas e Espaços');"
-      type="button" class="btn btn-primary btn-lg btn-block">Iniciar Etapa {{counter}}</button>
+      type="submit" class="btn btn-primary btn-lg btn-block">Iniciar Etapa {{counter}}</button>
+      </form>
        <p></p>
     <div class="row">
      <div class="col-md-4">
@@ -79,7 +81,7 @@ export default {
        id: this.$route.params.id,
        espacos:[],
        salas:[],
-       counter: 0
+       counter: 1
     }
   },
  created() {
@@ -107,7 +109,10 @@ export default {
       }else{
            cauter = +1
       }
-    }
+    },
+      grava() {
+      this.$http.get('http://localhost:3000/api/evento')
+    },
   }
   }
 
