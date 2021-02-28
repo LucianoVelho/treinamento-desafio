@@ -1,0 +1,30 @@
+treino/treino/TreinoApplication.java
+ treino.treino.TreinoApplication
+treino/treino/modulos/espaco/service/EspacoService.java
+ treino.treino.modulos.espaco.service.EspacoService
+treino/treino/modulos/pessoa/model/Pessoa.java
+ treino.treino.modulos.pessoa.model.Pessoa
+treino/treino/modulos/pessoa/repository/PessoaRepository.java
+ treino.treino.modulos.pessoa.repository.PessoaRepository
+treino/treino/modulos/pessoa/service/PessoaService.java
+ treino.treino.modulos.pessoa.service.PessoaService
+treino/treino/modulos/evento/controller/EventoController.java
+ treino.treino.modulos.evento.controller.EventoController
+treino/treino/modulos/espaco/model/Espaco.java
+ treino.treino.modulos.espaco.model.Espaco
+treino/treino/modulos/sala/service/SalaService.java
+ treino.treino.modulos.sala.service.SalaService
+treino/treino/modulos/sala/repository/SalaRepository.java
+ treino.treino.modulos.sala.repository.SalaRepository
+treino/treino/modulos/sala/model/Sala.java
+ treino.treino.modulos.sala.model.Sala
+treino/treino/modulos/evento/service/EventoService.java
+ treino.treino.modulos.evento.service.EventoService
+treino/treino/modulos/espaco/repository/EspacoRepository.java
+ treino.treino.modulos.espaco.repository.EspacoRepository
+treino/treino/modulos/sala/controller/SalaController.java
+ treino.treino.modulos.sala.controller.SalaController
+treino/treino/modulos/espaco/controller/EspacoController.java
+ treino.treino.modulos.espaco.controller.EspacoController
+treino/treino/modulos/pessoa/controller/PessoaController.java
+ treino.treino.modulos.pessoa.controller.PessoaController

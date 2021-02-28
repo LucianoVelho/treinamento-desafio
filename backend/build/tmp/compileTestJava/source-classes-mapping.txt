@@ -1,0 +1,8 @@
+treino/treino/modulos/evento/controller/EventoControllerTest.java
+ treino.treino.modulos.evento.controller.EventoControllerTest
+treino/treino/modulos/pessoa/controller/PessoaControllerTest.java
+ treino.treino.modulos.pessoa.controller.PessoaControllerTest
+treino/treino/modulos/sala/controller/SalaControllerTest.java
+ treino.treino.modulos.sala.controller.SalaControllerTest
+treino/treino/modulos/espaco/controller/EspacoControllerTest.java
+ treino.treino.modulos.espaco.controller.EspacoControllerTest
