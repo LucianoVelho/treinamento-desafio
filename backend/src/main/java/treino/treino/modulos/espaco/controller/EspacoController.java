@@ -28,10 +28,4 @@ public class EspacoController {
     public ResponseEntity<?> buscaEspacos () throws Exception {
         return new ResponseEntity<>(espacoService.resgataEspacos(), HttpStatus.OK);
     }
-    @CrossOrigin
-    @GetMapping(value = "/espaco/{idEspaco}", produces = {MediaType.APPLICATION_JSON_VALUE})
-    public ResponseEntity<?> getEspaco(
-            @PathVariable(value = "idEspaco", required = false) int idEspaco) {
-        return new ResponseEntity<>(espacoService.resgataEspaco(idEspaco), HttpStatus.OK);
-    }
 }

@@ -30,10 +30,4 @@ public class SalaController {
     public ResponseEntity<?> buscaSala () throws Exception {
         return new ResponseEntity<>(salaService.resgataSalas(), HttpStatus.OK);
     }
-    @CrossOrigin
-    @GetMapping(value = "/sala/{idSala}", produces = {MediaType.APPLICATION_JSON_VALUE})
-    public ResponseEntity<?> getSala(
-            @PathVariable(value = "idSala", required = false) int idSala) {
-        return new ResponseEntity<>(salaService.resgataSala(idSala), HttpStatus.OK);
-    }
 }
