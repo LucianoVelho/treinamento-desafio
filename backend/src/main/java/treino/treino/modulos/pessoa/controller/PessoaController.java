@@ -29,10 +29,4 @@ public class PessoaController {
     public ResponseEntity<?> buscaPessoas () throws Exception {
         return new ResponseEntity<>(pessoaService.resgataPessoas(), HttpStatus.OK);
     }
-    @CrossOrigin
-    @GetMapping(value = "/pessoa/{idPessoa}", produces = {MediaType.APPLICATION_JSON_VALUE})
-    public ResponseEntity<?> getPessoa(
-            @PathVariable(value = "idPessoa", required = false) int idPessoa) {
-        return new ResponseEntity<>(pessoaService.resgataPessoa(idPessoa), HttpStatus.OK);
-    }
 }
