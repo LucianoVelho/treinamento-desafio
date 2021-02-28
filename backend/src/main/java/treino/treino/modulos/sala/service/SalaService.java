@@ -18,8 +18,7 @@ public class SalaService {
     @Autowired
     ObjectMapper objectMapper;
 
-    public Sala cadastraSala(String salaString) throws JsonProcessingException {
-        Sala sala = objectMapper.readValue( salaString, Sala.class);
+    public Sala cadastraSala(Sala sala) throws JsonProcessingException {
         return salaRepository.save(sala);
     }
 

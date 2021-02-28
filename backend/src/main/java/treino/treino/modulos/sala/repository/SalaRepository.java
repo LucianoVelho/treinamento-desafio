@@ -1,6 +1,7 @@
 package treino.treino.modulos.sala.repository;
 
 import org.springframework.data.repository.CrudRepository;
+import treino.treino.modulos.pessoa.model.Pessoa;
 import treino.treino.modulos.sala.model.Sala;
 
 import java.util.List;

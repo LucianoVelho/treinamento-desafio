@@ -18,8 +18,7 @@ public class PessoaService {
     @Autowired
     ObjectMapper objectMapper;
 
-    public Pessoa cadastraPessoa(String pessoaString) throws JsonProcessingException {
-        Pessoa pessoa = objectMapper.readValue( pessoaString, Pessoa.class);
+    public Pessoa cadastraPessoa(Pessoa pessoa) throws JsonProcessingException {
         return pessoaRepository.save(pessoa);
     }
 

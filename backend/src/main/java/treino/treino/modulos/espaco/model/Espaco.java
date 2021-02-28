@@ -21,8 +21,8 @@ public class Espaco implements Serializable {
     @Column(name = "nome")
     private String nome;
 
-    @Column(name = "lotação")
-    private String lotação;
+    @Column(name = "lotacao")
+    private int lotacao;
 
     @ManyToMany
     @JoinTable(name="pessoa_espaco", joinColumns=
@@ -33,8 +33,9 @@ public class Espaco implements Serializable {
     public Espaco() {
     }
 
-    public Espaco(String nome, List<Pessoa> pessoas) {
+    public Espaco(String nome, int lotacao, List<Pessoa> pessoas) {
         this.nome = nome;
+        this.lotacao = lotacao;
         this.pessoas = pessoas;
     }
 
@@ -58,12 +59,12 @@ public class Espaco implements Serializable {
         this.nome = nome;
     }
 
-    public String getLotação() {
-        return lotação;
+    public int getLotacao() {
+        return lotacao;
     }
 
-    public void setLotação(String lotação) {
-        this.lotação = lotação;
+    public void setLotacao(int lotacao) {
+        this.lotacao = lotacao;
     }
 
     public List<Pessoa> getPessoas() {

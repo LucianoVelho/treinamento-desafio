@@ -6,8 +6,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import treino.treino.modulos.espaco.model.Espaco;
 import treino.treino.modulos.espaco.service.EspacoService;
-import treino.treino.modulos.pessoa.service.PessoaService;
+
 
 @RestController
 @RequestMapping("/api")
@@ -16,16 +17,18 @@ public class EspacoController {
     @Autowired
     EspacoService espacoService;
 
+    @CrossOrigin
     @PostMapping(value = "/espaco", produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<?> criaEspaco (
-            @RequestParam(value = "espaco", required = false) String espacoString) throws Exception {
-        return new ResponseEntity<>(espacoService.cadastraEspaco(espacoString), HttpStatus.OK);
+            @RequestBody Espaco espaco)  throws Exception {
+        return new ResponseEntity<>(espacoService.cadastraEspaco(espaco), HttpStatus.OK);
     }
-
+    @CrossOrigin
     @GetMapping(value = "/espacos", produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<?> buscaEspacos () throws Exception {
         return new ResponseEntity<>(espacoService.resgataEspacos(), HttpStatus.OK);
     }
+    @CrossOrigin
     @GetMapping(value = "/espaco/{idEspaco}", produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<?> getEspaco(
             @PathVariable(value = "idEspaco", required = false) int idEspaco) {
